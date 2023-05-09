@@ -42,7 +42,6 @@ module "ec2_eni_instance1 {
   instance          = module.ec2_instance1.id
   device_index      = 0
 }
-
 ```
 
 ## Outputs
