@@ -32,7 +32,9 @@ module "ec2_eni_instance1 {
   accountID = var.accountID
   region = "eu-west-1"
 
-  subnet            = "instance1"
+  name              = "instance1_eni"
+
+  subnet_id         = data.terraform_remote_state.vpc.outputs.vpc_subnet_example_id
   private_ips       = ["10.1.0.5"]
   security_groups   = [data.terraform_remote_state.vpc.outputs.vpc_sg_admin_id, data.terraform_remote_state.vpc.outputs.vpc_sg_example_id]
 
